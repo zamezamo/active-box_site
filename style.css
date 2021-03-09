@@ -2,13 +2,23 @@ body {
   font-family: "Ralewey", sans-serif;
   font-size: 14px;
   color: #6c7279;
-  background-color: #000;
+  background-color: #fff;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+h1, h3, h2, h4, h5, h6 {
+  margin: 0;
+}
+
+p{
+  margin: 0 10px;
 }
 
 /* ------ HEADER ------ */
@@ -20,6 +30,7 @@ body {
 }
 
 .header {
+  height: 100px;
   width: 100%;
   position: absolute;
   top: 0;
@@ -62,6 +73,64 @@ body {
 /* ------ INTRO ------ */
 
 .intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 750px;
-  background: url("img/intro-bg.jpg") center no-repeat  / cover ;
+  background: #31344e url("img/intro-bg.jpg") center no-repeat;
+  background-size: cover;
+  padding-top: 100px;
+}
+
+.intro_inner {
+  width: 100%;
+  max-width: 970px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro_title {
+  margin: 0 0 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 65px;
+  line-height: 1.1;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+
+}
+
+.intro_subtitle {
+  font-size: 22px;
+  color: #fff;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+/* ------ BUTTON ------ */
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  padding: 14px 40px;
+
+  border-radius: 2px;
+  border: 0;
+  cursor: pointer;
+
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .1s linear;
+}
+
+.btn--red {
+  background-color: #e84545;
+}
+
+.btn--red:hover{
+  background-color: #dd3434;
 }
