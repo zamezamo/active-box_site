@@ -117,6 +117,7 @@ p {
 .btn {
   display: inline-block;
   vertical-align: top;
+  text-align: center;
   padding: 14px 40px;
 
   border-radius: 2px;
@@ -138,6 +139,10 @@ p {
 
 .btn--red:hover {
   background-color: #dd3434;
+}
+
+.btn--long {
+  min-width: 280px;
 }
 
 /* ------ FEATURES ------ */
@@ -282,6 +287,10 @@ p {
   display: flex;
 }
 
+.social--footer {
+  justify-content: center;
+}
+
 .social_item {
   display: flex;
   width: 40px;
@@ -292,8 +301,8 @@ p {
   justify-content: center;
   align-items: center;
 
-  transition: background 0.1s linear;
-  transition: fill 0.1s linear;
+  transition: background 0.2s linear;
+  transition: fill 0.2s linear;
 }
 
 .social_item:hover {
@@ -304,8 +313,145 @@ p {
   fill: #000;
 }
 
+.social--footer .social_item:hover {
+  background-color: #fff;
+}
+
+.social--footer .social_item {
+  background-color: transparent;
+  border-width: 2px;
+  border-color: #fff;
+  border-radius: 2px;
+}
+
 .social_icon {
   fill: #c6cacc;
   display: block;
   height: 18px;
+}
+
+.social--footer .social_icon {
+  fill: #fff;
+}
+
+/* ------ REVIEWS ------ */
+
+.reviews {
+  background-color: #53354a;
+  overflow: hidden;
+}
+
+.reviews_item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.reviews_photo {
+  width: 50%;
+  height: 500px;
+  position: relative;
+}
+
+.reviews_img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 1;
+
+  transform: translateY(-50%);
+}
+
+.reviews_content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  padding: 80px;
+}
+
+.reviews_text {
+  font-family: "Cardo", sans-serif;
+  font-style: italic;
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.reviews_author {
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ------ DOWNLOAD ------ */
+.download {
+  margin: 90px 0;
+  text-align: center;
+}
+
+.download_title {
+  font-size: 28px;
+  color: #2d3033;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.download_text {
+  font-size: 13px;
+  color: #2d3033;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+/* ------ FOOTER ------ */
+.footer {
+  background-color: #3a3e64;
+}
+
+.footer_inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 70px 0;
+}
+
+.footer_block {
+  width: 33.3333%;
+  text-align: center;
+}
+
+.footer_title {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.footer_address {
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+  font-size: 14px;
+  font-style: normal;
+}
+
+/* ------ COPYRIGHT ------ */
+
+.copyright {
+padding: 20px 0;
+background-color: #313454;
+}
+
+.copyright_text{
+  text-transform: auto;
+  font-size: 14px;
+  color: #808080;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.copyright_text span{
+  color: #fff;
 }
