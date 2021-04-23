@@ -44,6 +44,18 @@ p {
   z-index: 1000;
 }
 
+.header.fixed {
+  position: fixed;
+  height: auto;
+  background-color: #31344e;
+}
+
+.header.fixed .header_inner {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 0;
+}
+
 .header_inner {
   display: flex;
   justify-content: space-between;
@@ -203,6 +215,7 @@ p {
   left: 50%;
   z-index: 1;
   transform: translate3d(-50%, -50%, 0);
+  min-width: 100%;
 }
 
 .work_content {
@@ -341,6 +354,15 @@ p {
   overflow: hidden;
 }
 
+.reviews-slider {
+  height: 500px;
+  overflow: hidden;
+}
+
+.reviews-slider.slick-initialized {
+  height: auto;
+}
+
 .reviews_item {
   display: flex;
   flex-wrap: wrap;
@@ -371,7 +393,7 @@ p {
 }
 
 .reviews_text {
-  font-family: "Cardo", sans-serif;
+  font-family: "Cardo", serif;
   font-style: italic;
   font-size: 36px;
   line-height: 1.2;
@@ -385,6 +407,45 @@ p {
   font-weight: 700;
 }
 
+.slick-dots {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  border-radius: 50%;
+  bottom: 0;
+  padding: 0;
+  font-size: 0;
+  color: transparent;
+  opacity: .5;
+  cursor: pointer;
+}
+
+.slick-dots button:focus{
+  outline: 0;
+}
+
+.slick-dots .slick-active button{
+  opacity: 1;
+}
+
 /* ------ DOWNLOAD ------ */
 .download {
   margin: 90px 0;
@@ -394,14 +455,14 @@ p {
 .download_title {
   font-size: 28px;
   color: #2d3033;
-  font-weight: 300;
+  font-weight: 100;
   margin-bottom: 10px;
 }
 
 .download_text {
   font-size: 13px;
   color: #2d3033;
-  font-weight: 700;
+  font-weight: 300;
   text-transform: uppercase;
   margin-bottom: 30px;
 }
@@ -422,6 +483,10 @@ p {
   text-align: center;
 }
 
+.footer_block {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .footer_title {
   margin-bottom: 10px;
   font-size: 14px;
@@ -440,11 +505,11 @@ p {
 /* ------ COPYRIGHT ------ */
 
 .copyright {
-padding: 20px 0;
-background-color: #313454;
+  padding: 20px 0;
+  background-color: #313454;
 }
 
-.copyright_text{
+.copyright_text {
   text-transform: auto;
   font-size: 14px;
   color: #808080;
@@ -452,6 +517,195 @@ background-color: #313454;
   text-align: center;
 }
 
-.copyright_text span{
+.copyright_text span {
   color: #fff;
+}
+
+/* Burger */
+.burger {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 9px 2px;
+}
+
+.burger_item {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+
+  font-size: 0;
+  color: transparent;
+
+  position: relative;
+}
+
+.burger_item::before,
+.burger_item::after {
+  content: "";
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+
+  left: 0;
+  z-index: 0;
+}
+
+.burger_item::before {
+  top: -8px;
+}
+
+.burger_item::after {
+  bottom: -8px;
+}
+
+/* ------ MEDIA ------ */
+
+@media (max-width: 991px) {
+  /* Nav */
+  .nav {
+    display: none;
+    background-color: #31344e;
+    width: 100%;
+    flex-direction: column;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 100%;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 9px 15px;
+  }
+
+  /* Burger */
+  .burger {
+    display: block;
+  }
+
+  /* Intro */
+  .intro_title {
+    font-size: 40px;
+  }
+
+  /* Features */
+  .feature_item {
+    width: 50%;
+  }
+
+  /* Works */
+  .work_item {
+    min-width: 50%;
+  }
+
+  /* Team */
+  .team_item {
+    width: 50%;
+
+    text-align: center;
+  }
+
+  .team_photo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .social {
+    justify-content: center;
+  }
+
+  /* Reviews */
+  .reviews_photo {
+    width: 100%;
+    margin: 15px 0 40px;
+    overflow: hidden;
+  }
+  .reviews_content {
+    width: 100%;
+    padding-left: 0;
+    padding-bottom: 40px;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .intro {
+    height: auto;
+    padding-top: 130px;
+    padding-bottom: 130px;
+  }
+
+  .intro_title {
+    font-size: 30px;
+  }
+
+  .intro_subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .features {
+    margin: 40px 0;
+  }
+
+  .feature_item {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .work_item {
+    min-width: 100%;
+    height: 300px;
+  }
+
+  .team_item {
+    width: 100%;
+  }
+
+  .team {
+    margin: 60px 0 30px;
+  }
+
+  .reviews_text {
+    font-size: 25px;
+  }
+
+  .reviews_img {
+    right: -225px;
+  }
+
+  .btn--long {
+    min-width: 260px;
+  }
+
+  .download {
+    margin: 50px 0;
+  }
+
+  .download_title {
+    font-size: 24px;
+  }
+
+  .footer_block {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer_block::last-child {
+    margin-bottom: 0;
+  }
+
+  .footer_inner {
+    padding: 30px 0;
+  }
 }
